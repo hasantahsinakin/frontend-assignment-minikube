@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+  labels:
+    app: database
+spec:
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+      - name: database
+        image: hasantahsinakin/frontend-assignment_database:v1
+        ports:
+        - containerPort: 5432
+        envFrom:
+          - configMapRef:
+              name: database-env
+        volumeMounts:
+        - name: database
+          mountPath: /docker-entrypoint-initdb.d/docker_postgres_init.sql
+          subPath: docker-postgres-init-sql-configmap
+      volumes:
+      - name: database
+        configMap:
+          name: database-env

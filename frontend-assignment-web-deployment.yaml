@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels:
+    app: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web
+        image: hasantahsinakin/frontend-assignment_web:v1
+        ports:
+        - containerPort: 3000
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "rails db:migrate RAILS_ENV=development"]
+        env:
+        - name: POSTGRES_HOST
+          value: database
+        - name: POSTGRES_USER
+          valueFrom:
+            configMapKeyRef:
+              name: database-env
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: database-env
+              key: POSTGRES_PASSWORD

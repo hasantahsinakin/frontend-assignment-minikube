@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database-env
+data:
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  docker-postgres-init-sql-configmap: |
+    CREATE DATABASE fe_app_development;
+    CREATE DATABASE fe_app_test;

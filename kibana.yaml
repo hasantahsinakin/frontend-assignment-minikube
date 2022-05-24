@@ -1,0 +1,58 @@
+##################################################
+# ELK Kibana Service
+##################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: kibana-svc
+  namespace: default
+  labels:
+    app: kibana
+    kubernetes.io/name: "Kibana"
+spec:
+  type: NodePort
+  ports:
+  - port: 5601
+    protocol: TCP
+    targetPort: ui
+    nodePort: 32061
+  selector:
+    app: kibana
+---
+##################################################
+# ELK Kibana Deployment
+##################################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana-dep
+  namespace: default
+  labels:
+    app: kibana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kibana
+  template:
+    metadata:
+      labels:
+        app: kibana
+    spec:
+      containers:
+      - name: kibana-dep
+        image: docker.elastic.co/kibana/kibana:7.14.1
+        resources:
+          requests:
+            cpu: 100m
+            memory: "512Mi"
+          limits:
+            cpu: 1000m
+            memory: "2Gi"
+        env:
+          - name: ELASTICSEARCH_URL
+            value: http://elasticsearch:9200
+        ports:
+        - containerPort: 5601
+          name: ui
+          protocol: TCP
