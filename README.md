@@ -4,63 +4,63 @@
 minikube kubectl -- get all
 
 NAME                                                READY   STATUS    RESTARTS   AGE
-pod/database-679d77bd89-2pt22                       1/1     Running   0          84m
-pod/es-cluster-0                                    1/1     Running   0          82m
-pod/filebeat-mjccw                                  1/1     Running   0          80m
-pod/grafana-d97958b5f-27dvz                         1/1     Running   0          23m
-pod/kibana-dep-7f677b4757-mm9f8                     1/1     Running   0          78m
-pod/logstash-dep-65bbd65f76-4chwz                   1/1     Running   0          81m
-pod/prometheus-alertmanager-94b6f74cf-xh6q2         2/2     Running   0          30m
-pod/prometheus-kube-state-metrics-748fc7f64-w2k89   1/1     Running   0          30m
-pod/prometheus-node-exporter-hsh2v                  1/1     Running   0          30m
-pod/prometheus-pushgateway-5f5cdd4569-d6dkt         1/1     Running   0          30m
-pod/prometheus-server-7f4bb6844b-9mw54              2/2     Running   0          30m
-pod/web-6f6d6d97bb-49mnt                            1/1     Running   0          83m
+pod/database-679d77bd89-2pt22                       1/1     Running   0          105m
+pod/es-cluster-0                                    1/1     Running   0          103m
+pod/filebeat-mjccw                                  1/1     Running   0          100m
+pod/grafana-d97958b5f-27dvz                         1/1     Running   0          43m
+pod/kibana-dep-7f677b4757-mm9f8                     1/1     Running   0          99m
+pod/logstash-dep-65bbd65f76-4chwz                   1/1     Running   0          101m
+pod/prometheus-alertmanager-94b6f74cf-xh6q2         2/2     Running   0          50m
+pod/prometheus-kube-state-metrics-748fc7f64-w2k89   1/1     Running   0          50m
+pod/prometheus-node-exporter-hsh2v                  1/1     Running   0          50m
+pod/prometheus-pushgateway-5f5cdd4569-d6dkt         1/1     Running   0          50m
+pod/prometheus-server-7f4bb6844b-9mw54              2/2     Running   0          50m
+pod/web-6f6d6d97bb-49mnt                            1/1     Running   0          104m
 
 NAME                                    TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                         AGE
-service/database                        ClusterIP   10.96.181.182    <none>        5432/TCP                        83m
-service/elasticsearch                   NodePort    10.110.147.188   <none>        9200:32520/TCP,9300:32445/TCP   82m
-service/grafana                         ClusterIP   10.101.70.204    <none>        80/TCP                          23m
-service/grafana-np                      NodePort    10.96.214.133    <none>        80:30015/TCP                    8m
-service/kibana-svc                      NodePort    10.109.145.147   <none>        5601:32061/TCP                  78m
-service/kubernetes                      ClusterIP   10.96.0.1        <none>        443/TCP                         85m
-service/logstash-svc                    ClusterIP   10.102.249.9     <none>        5044/TCP                        81m
-service/prometheus-alertmanager         ClusterIP   10.105.24.131    <none>        80/TCP                          30m
-service/prometheus-kube-state-metrics   ClusterIP   10.101.192.104   <none>        8080/TCP                        30m
-service/prometheus-node-exporter        ClusterIP   10.106.146.27    <none>        9100/TCP                        30m
-service/prometheus-pushgateway          ClusterIP   10.106.125.108   <none>        9091/TCP                        30m
-service/prometheus-server               ClusterIP   10.110.49.48     <none>        80/TCP                          30m
-service/prometheus-server-np            NodePort    10.105.125.31    <none>        80:32730/TCP                    28m
-service/web                             NodePort    10.101.130.203   <none>        3000:32021/TCP                  83m
+service/database                        ClusterIP   10.96.181.182    <none>        5432/TCP                        104m
+service/elasticsearch                   NodePort    10.110.147.188   <none>        9200:32520/TCP,9300:32445/TCP   103m
+service/grafana                         ClusterIP   10.101.70.204    <none>        80/TCP                          43m
+service/grafana-np                      NodePort    10.96.214.133    <none>        80:30015/TCP                    28m
+service/kibana-svc                      NodePort    10.109.145.147   <none>        5601:32061/TCP                  99m
+service/kubernetes                      ClusterIP   10.96.0.1        <none>        443/TCP                         106m
+service/logstash-svc                    ClusterIP   10.102.249.9     <none>        5044/TCP                        101m
+service/prometheus-alertmanager         ClusterIP   10.105.24.131    <none>        80/TCP                          50m
+service/prometheus-kube-state-metrics   ClusterIP   10.101.192.104   <none>        8080/TCP                        50m
+service/prometheus-node-exporter        ClusterIP   10.106.146.27    <none>        9100/TCP                        50m
+service/prometheus-pushgateway          ClusterIP   10.106.125.108   <none>        9091/TCP                        50m
+service/prometheus-server               ClusterIP   10.110.49.48     <none>        80/TCP                          50m
+service/prometheus-server-np            NodePort    10.105.125.31    <none>        80:32730/TCP                    49m
+service/web                             NodePort    10.101.130.203   <none>        3000:32021/TCP                  103m
 
 NAME                                      DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
-daemonset.apps/filebeat                   1         1         1       1            1           <none>          80m
-daemonset.apps/prometheus-node-exporter   1         1         1       1            1           <none>          30m
+daemonset.apps/filebeat                   1         1         1       1            1           <none>          100m
+daemonset.apps/prometheus-node-exporter   1         1         1       1            1           <none>          50m
 
 NAME                                            READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/database                        1/1     1            1           84m
-deployment.apps/grafana                         1/1     1            1           23m
-deployment.apps/kibana-dep                      1/1     1            1           78m
-deployment.apps/logstash-dep                    1/1     1            1           81m
-deployment.apps/prometheus-alertmanager         1/1     1            1           30m
-deployment.apps/prometheus-kube-state-metrics   1/1     1            1           30m
-deployment.apps/prometheus-pushgateway          1/1     1            1           30m
-deployment.apps/prometheus-server               1/1     1            1           30m
-deployment.apps/web                             1/1     1            1           83m
+deployment.apps/database                        1/1     1            1           105m
+deployment.apps/grafana                         1/1     1            1           43m
+deployment.apps/kibana-dep                      1/1     1            1           99m
+deployment.apps/logstash-dep                    1/1     1            1           101m
+deployment.apps/prometheus-alertmanager         1/1     1            1           50m
+deployment.apps/prometheus-kube-state-metrics   1/1     1            1           50m
+deployment.apps/prometheus-pushgateway          1/1     1            1           50m
+deployment.apps/prometheus-server               1/1     1            1           50m
+deployment.apps/web                             1/1     1            1           104m
 
 NAME                                                      DESIRED   CURRENT   READY   AGE
-replicaset.apps/database-679d77bd89                       1         1         1       84m
-replicaset.apps/grafana-d97958b5f                         1         1         1       23m
-replicaset.apps/kibana-dep-7f677b4757                     1         1         1       78m
-replicaset.apps/logstash-dep-65bbd65f76                   1         1         1       81m
-replicaset.apps/prometheus-alertmanager-94b6f74cf         1         1         1       30m
-replicaset.apps/prometheus-kube-state-metrics-748fc7f64   1         1         1       30m
-replicaset.apps/prometheus-pushgateway-5f5cdd4569         1         1         1       30m
-replicaset.apps/prometheus-server-7f4bb6844b              1         1         1       30m
-replicaset.apps/web-6f6d6d97bb                            1         1         1       83m
+replicaset.apps/database-679d77bd89                       1         1         1       105m
+replicaset.apps/grafana-d97958b5f                         1         1         1       43m
+replicaset.apps/kibana-dep-7f677b4757                     1         1         1       99m
+replicaset.apps/logstash-dep-65bbd65f76                   1         1         1       101m
+replicaset.apps/prometheus-alertmanager-94b6f74cf         1         1         1       50m
+replicaset.apps/prometheus-kube-state-metrics-748fc7f64   1         1         1       50m
+replicaset.apps/prometheus-pushgateway-5f5cdd4569         1         1         1       50m
+replicaset.apps/prometheus-server-7f4bb6844b              1         1         1       50m
+replicaset.apps/web-6f6d6d97bb                            1         1         1       104m
 
 NAME                          READY   AGE
-statefulset.apps/es-cluster   1/1     82m
+statefulset.apps/es-cluster   1/1     103m
 ```
 
 **Kibana auditd - filebeat**
