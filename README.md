@@ -1,8 +1,14 @@
 # frontend-assignment-minikube
 
-```
-minikube kubectl -- get all
+**Kubernetes ELK-Stack**
 
+```
+https://medium.com/devopsturkiye/kubernetes-elk-kurulumu-80058c812cf6
+```
+
+**minikube kubectl -- get all**
+
+```
 NAME                                                READY   STATUS    RESTARTS   AGE
 pod/database-679d77bd89-2pt22                       1/1     Running   0          105m
 pod/es-cluster-0                                    1/1     Running   0          103m
